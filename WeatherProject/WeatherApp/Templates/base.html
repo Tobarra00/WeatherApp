@@ -22,7 +22,7 @@
             <a href="{% url "index" %}" class='btn btn-clear'>Reset search data</a>
         </form>
         {% if request.method == 'POST' and city_weather is not None %}
-            <p class='description'>Weather in {{city_weather.city}} at {{city_weather.date}}:</p>
+            <p class='description'>Weather in {{city_weather.city}} on {{city_weather.date}}:</p>
         {% endif %}
     </main>
     <div class='weather-container'>
