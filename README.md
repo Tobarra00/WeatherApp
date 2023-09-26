@@ -9,11 +9,9 @@
     <br>
    
 
-https://github.com/Tobarra00/WeatherApp/assets/94169504/24b22536-8328-4349-99b1-8b4a847f4f92
+https://github.com/Tobarra00/WeatherApp/assets/94169504/c69d249d-7a5f-4d59-9318-5f3b80d72f92
 
 
-
-   
     
 </div>
 
@@ -45,7 +43,7 @@ https://github.com/Tobarra00/WeatherApp/assets/94169504/24b22536-8328-4349-99b1-
         </ul>
         It should look something like this:
           
-![image](https://github.com/Tobarra00/WeatherApp/assets/94169504/0389bef1-617e-4d9d-b989-21372d950b81)
+![image](https://github.com/Tobarra00/WeatherApp/assets/94169504/33fc9579-d361-46ce-927b-41a45bb8d3d4)
         </li>
         <li>
         To wrap things up, create a .env file and add your custom values for: SECRET_KEY, DEBUG, TEMPLATES_DIR and API_KEY (you can get this last one from https://openweathermap.org/)
@@ -68,7 +66,8 @@ https://github.com/Tobarra00/WeatherApp/assets/94169504/24b22536-8328-4349-99b1-
     <ul>
         <li>My linkedin: <a href="https://www.linkedin.com/in/pedro-tobarra-leal/">
           
-  ![linkedin](https://github.com/Tobarra00/WeatherApp/assets/94169504/05092f9b-3760-48cb-96ef-d8ba81a0e840)
+ ![linkedin](https://github.com/Tobarra00/WeatherApp/assets/94169504/789df838-3283-4e4b-9756-4d0dd2d7b829)
+
 
   </a>
   </li>
