@@ -4,13 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
     <title>Weather search</title>
 </head>
 <body>
-    <header>
-        <h1>Weather search</h1>
-    </header>
+    <main>
+        <h1 class='title'>Weather search</h1>
+    
+        <form action="" method='POST' class='form'>{% csrf_token %}
+            <input type="text" name="city" placeholder='Insert a city...' required>
+            <button type="submit" class='btn'>Search</button>
+            <button type="reset" class='btn'>Clear search</button>
+            <a href="{% url "index" %}" class='btn btn-clear'>Reset search data</a>
+        </form>
+        {% if request.method == 'POST' and city_weather is not None %}
+            <p class='description'>Weather in {{city_weather.city}} at {{city_weather.date}}:</p>
+        {% endif %}
+    </main>
+    <div class='weather-container'>
+        {% if request.method == 'POST' and city_weather is not None %}
+            <div class="today-weather">
+                <h2>Now: {{city_weather.temp}}ºC</h2>
+                <h3>Range {{city_weather.temp_min}}ºC - {{city_weather.temp_max}}ºC</h3>
+                <h4>Weather: {{city_weather.weather}}</h4>
+                <img src="https://openweathermap.org/img/w/{{city_weather.icon}}.png" alt="{{city_weather.weather}}">
+            </div>
+            <div class="forecast">
+            {% for day in city_forecast %}
+                <div class="forecast-weather">
+                    <h3>{{day.date}}</h3>
+                    <h2>Forecast: {{day.temp}}ºC</h2>
+                    <h3>Range: {{day.temp_min}}ºC - {{day.temp_max}}ºC</h3>
+                    <h4>Weather: {{day.weather}}</h4>
+                    <img src="https://openweathermap.org/img/w/{{day.icon}}.png" alt="{{day.weather}}">    
+                </div>
+            {% endfor %}
+            </div>
+        {% endif %}
+    </div>
 </body>
+<footer>
+    <div>
+        <h3>By Pedro Tobarra Leal</h3>
+    </div>
+    <div class="contact">
+        <a href="mailto:pedro.tobarra.leal@gmail.com" class='btn btn-contact'>Contact me</a>
+        <a href="https://github.com/Tobarra00" target="blank"><img src="{% static 'images/github-mark-white.png' %}" alt="github link" width='32' height='32'></a>
+        <a href="https://linkedin.com/in/pedro-tobarra-leal" target="blank"><img src="{% static 'images/linkedin.png' %}" alt="linkedin link"></a>
+    </div>
+</footer>
 </html>
